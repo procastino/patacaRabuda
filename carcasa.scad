@@ -2,23 +2,25 @@ longoBase=90;
 alto=35;
 inclinacion=30;
 thick=2.5;
-radioRoda=12;
-anchoRoda=8;
-anchoBrida=3;
+radioRoda=13;
+anchoRoda=10;
+anchoBrida=4;
 thickBrida=1;
 
 difference(){
 exterior();
-#interior(3);
+interior(3);
 translate ([-50+2*thick,longoBase-radioRoda*2-4,0]) ocoRoda();
 translate ([50-anchoRoda-2-2*thick,longoBase-radioRoda*2-4,0]) ocoRoda();
-translate([-25,longoBase-radioRoda-10,-1]) furados();
-    translate([12,longoBase-radioRoda-10,-1]) furados();
+//ocos bridas motores
+translate([-23,longoBase-radioRoda-10,-1]) furados();
+translate([11,longoBase-radioRoda-10,-1]) furados();
    translate([46,8,0]) rotate([30,0,0]) cylinder(r=0.75,h=10,$fn=10);
      translate([-46,8,0]) rotate([30,0,0]) cylinder(r=0.75,h=10,$fn=10);
 }
 translate([-50+thick,longoBase+10-thick-2,alto-10]) fixaVertical();
 translate([50-thick,longoBase+10-thick-2,alto-10]) rotate([0,0,180]) fixaVertical();
+
 module fixaVertical(){
     difference(){
     rotate([90,0,0]) linear_extrude(height=4,center=true) polygon(points=[
@@ -61,6 +63,6 @@ module ocoRoda(){
 module furados(){
    cube([anchoBrida,thickBrida,thick*6]);
    translate([0,10,0]) cube([anchoBrida,thickBrida,thick*6]); 
-    translate([10,10,0]) cube([anchoBrida,thickBrida,thick*6]); 
-    translate([10,0,0]) cube([anchoBrida,thickBrida,thick*6]); 
+    translate([8,10,0]) cube([anchoBrida,thickBrida,thick*6]); 
+    translate([8,0,0]) cube([anchoBrida,thickBrida,thick*6]); 
 }

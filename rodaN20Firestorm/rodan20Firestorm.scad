@@ -12,10 +12,11 @@ difference(){
 }
 
 //cilindro portaeixo 
-cylinder(r=radioEixo*2, h=anchoRoda,$fn=60);
+cylinder(r=radioEixo*2.5, h=anchoRoda,$fn=60);
 }
 
 translate([0,0,-1]) eixo();
+translate([-0.3,-10,0]) cube([0.6,10,8]);
 }
 
 

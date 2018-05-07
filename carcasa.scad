@@ -29,7 +29,7 @@ module fixaVertical(){
         [0,0],
         [0,14],
         [6,14],
-        [6,5]
+        [6,7]
         ]);
         translate([3,0,4]) cylinder(r=1,h=14,$fn=10);
     }
